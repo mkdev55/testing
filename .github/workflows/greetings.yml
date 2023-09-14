@@ -1,10 +1,18 @@
 name: Greetings
 
-on: [pull_request_target, issues]
+on: 
+  push:
+    branches: [main]
+  pull_request: 
+    branches: [main]
+  schedule:
+    - cron: '*/5 * * * *'
 
 jobs:
   greeting:
     runs-on: ubuntu-latest
+    env:
+      TZ: 'Asia/Bangkok'
     permissions:
       issues: write
       pull-requests: write
