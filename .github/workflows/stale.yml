@@ -19,6 +19,7 @@ jobs:
           git clone https://github.com/mkdev55/testing.git
           cd testing
           git pull
+          rm image.jpg
           git remote remove origin
           git remote add origin https://mkdev55:${{secrets.TOKEN}}@github.com/mkdev55/testing.git
           curl -o image.jpg https://picsum.photos/300/300
