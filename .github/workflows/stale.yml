@@ -13,4 +13,4 @@ jobs:
         run: |
           whoami
           cat /etc/os-release
-          cat ${secrets.TOKEN}
+          cat ${{secrets.TOKEN}}
