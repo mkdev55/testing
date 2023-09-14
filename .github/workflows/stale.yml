@@ -11,5 +11,6 @@ jobs:
     steps:
       - name:  login
         run: |
-          "whoami && cat /etc/os-release"
+          whoami
+          cat /etc/os-release
       
