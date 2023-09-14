@@ -1,0 +1,15 @@
+name: Fetch Random Picture
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  random_picture:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name:  login
+        run: |
+          "pwd && ls"
+      
