@@ -18,6 +18,8 @@ jobs:
           curl -o index.html https://www.youtube.com
           git add .
           git commit -m 'test'
+          git config --global user.email "pxr@gmail.com"
+          git config --global user.name "pxr"
           git push origin main
           
           
