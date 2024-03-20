@@ -1,28 +1,9 @@
-name: Fetch Random Picture
+name: CI
 on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: '* */1 * * *'
-
+   pull_request:
+    branches: [ $default-branch ]
 jobs:
-  random_picture:
+  ci:
     runs-on: ubuntu-latest
-    env:
-      TZ: "Asia/Bangkok"
     steps:
-      - name:  login
-        run: |
-          git config --global user.email "pxr@gmail.com"
-          git config --global user.name "pxr"
-          git clone https://github.com/mkdev55/testing.git
-          cd testing
-          git remote remove origin
-          git remote add origin https://mkdev55:${{secrets.TOKEN}}@github.com/mkdev55/testing.git
-          curl -o image.jpg https://th.bing.com/th/id/OIP.zf6AJId8-k5T_RVgHiJc5gHaHa?pid=ImgDet&rs=1
-          git add .
-          git commit -m 'test'
-          git push origin main
-          
-          
+      - run: echo successfully run pipeline.
